@@ -1,18 +1,18 @@
-<?php namespace Iffifan\MemoryDebugbar\Tests\DataCollector;
+<?php namespace SuStartX\MemoryDebugbar\Tests\DataCollector;
 
-use Iffifan\MemoryDebugbar\DataCollector\MemoryDataCollector;
-use Iffifan\MemoryDebugbar\Tests\TestCase;
+use SuStartX\MemoryDebugbar\DataCollector\MemoryDataCollector;
+use SuStartX\MemoryDebugbar\Tests\TestCase;
 
 /**
  * Class MemoryDataCollectorTest
  *
- * @package Iffifan\MemoryDebugbar\Tests\DataCollector
+ * @package SuStartX\MemoryDebugbar\Tests\DataCollector
  */
 class MemoryDataCollectorTest extends TestCase
 {
     protected $collector;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->collector = new MemoryDataCollector();

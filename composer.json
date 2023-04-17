@@ -1,5 +1,5 @@
 {
-    "name": "iffifan/laravel-debugbar-memory",
+    "name": "sustartx/laravel-debugbar-memory",
     "description": "Add detailed memory usage measurement for code blocks in laravel debugbar",
     "type": "library",
     "require": {
@@ -7,8 +7,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Iffifan\\MemoryDebugbar\\": "src/",
-            "Iffifan\\MemoryDebugbar\\Tests\\": "tests/"
+            "SuStartX\\MemoryDebugbar\\": "src/",
+            "SuStartX\\MemoryDebugbar\\Tests\\": "tests/"
         },
         "files": [
             "src/helpers.php"
@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Iffifan\\MemoryDebugbar\\Providers\\MemoryDebugbarServiceProvider"
+                "SuStartX\\MemoryDebugbar\\Providers\\MemoryDebugbarServiceProvider"
             ]
         }
     },

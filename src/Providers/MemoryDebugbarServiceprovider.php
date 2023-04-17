@@ -1,22 +1,24 @@
-<?php namespace Iffifan\MemoryDebugbar\Providers;
+<?php
+
+namespace SuStartX\MemoryDebugbar\Providers;
 
 use Barryvdh\Debugbar\LaravelDebugbar;
-use Iffifan\MemoryDebugbar\DataCollector\MemoryDataCollector;
+use SuStartX\MemoryDebugbar\DataCollector\MemoryDataCollector;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class MemoryDebugbarServiceprovider
+ * Class MemoryDebugbarServiceProvider
  *
- * @package Iffifan\MemoryDebugbar\Providers
+ * @package SuStartX\MemoryDebugbar\Providers
  */
-class MemoryDebugbarServiceprovider extends ServiceProvider
+class MemoryDebugbarServiceProvider extends ServiceProvider
 {
     /**
      * Register services
      */
     public function register()
     {
-        $debugbar = $this->app->make(LaravelDebugbar::class);
+        $debugbar = $this->app->get(LaravelDebugbar::class);
         if ($debugbar->shouldCollect('memory_details', true)) {
             $debugbar->addCollector(new MemoryDataCollector());
             $this->app->booted(

@@ -1,25 +1,44 @@
 # laravel-debugbar-memory
-[![License](https://poser.pugx.org/iffifan/laravel-debugbar-memory/license)](https://packagist.org/packages/iffifan/laravel-debugbar-memory)
+[![License](https://poser.pugx.org/sustartx/laravel-debugbar-memory/license)](https://packagist.org/packages/sustartx/laravel-debugbar-memory)
 
 Add detailed memory usage measurement for code blocks in [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
 
+## Note
 
+This package was cloned from [Amir Irfan's iffifan/laravel-debugbar-memory repo](https://github.com/iffifan/laravel-debugbar-memory). I made some improvements by cloning because I saw that he did not contribute to the project for a long time. Thank him for publishing this package.
 
 ## Installation
 
-Require this package with composer. It is recommended to only require the package for development.
-
 ```shell
-composer require iffifan/laravel-debugbar-memory --dev
+composer require sustartx/laravel-debugbar-memory --dev
 ```
 
-Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
+#### or add composer.json
 
-If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
-
-```php
-Iffifan\MemoryDebugbar\Providers\MemoryDebugbarServiceProvider::class,
 ```
+    "require-dev": {
+        "sustartx/laravel-debugbar-memory": "*"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "sustartx/laravel-debugbar-memory"
+            ]
+        }
+    },
+```
+
+#### AppServiceProvider.php
+
+```
+// Debugbar
+if (env('DEBUGBAR_ENABLE', false)){
+    // $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+    $this->app->register(\SuStartX\MemoryDebugbar\Providers\MemoryDebugbarServiceProvider::class);
+    // $this->app->alias('Debugbar', \Barryvdh\Debugbar\Facades\Debugbar::class);
+}
+```
+
 ## Usage
 
 After successful installation you should see `Memory` tab in your Debugbar
@@ -51,3 +70,4 @@ Just add
         'memory_details'  => false, //Display memory details
 ```
 in ``config/debugbar.php``
+

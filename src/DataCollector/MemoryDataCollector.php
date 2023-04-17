@@ -1,6 +1,6 @@
 <?php
 
-namespace Iffifan\MemoryDebugbar\DataCollector;
+namespace SuStartX\MemoryDebugbar\DataCollector;
 
 use Closure;
 use DebugBar\DataCollector\DataCollector;
@@ -10,7 +10,7 @@ use DebugBar\DebugBarException;
 /**
  * Class MemoryDataCollector
  *
- * @package Iffifan\MemoryDebugbar\DataCollector
+ * @package SuStartX\MemoryDebugbar\DataCollector
  */
 class MemoryDataCollector extends DataCollector implements Renderable
 {
@@ -24,8 +24,6 @@ class MemoryDataCollector extends DataCollector implements Renderable
      * @var array
      */
     protected $measures = [];
-
-
     protected $realUsage = false;
 
     /**
